@@ -23,13 +23,16 @@
             justify-content: space-between;
             max-width: 100%;
             flex-wrap: wrap;
+            padding: 10px;
         }
 
         #gameCanvas {
             border: 2px solid #333;
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            margin: 0 auto;
+            width: 100%;
+            max-width: 300px; /* Maintain max width */
+            height: auto; /* Maintain aspect ratio */
         }
 
         #gameControls {
@@ -161,6 +164,18 @@
         #down {
             grid-column: 2;
             grid-row: 3;
+        }
+
+        /* Media Queries for Responsiveness */
+        @media (max-width: 600px) {
+            .controls {
+                width: 100%;
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            #gameCanvas {
+                max-width: 90%; /* Adjust canvas size for smaller screens */
+            }
         }
     </style>
 </head>
@@ -369,4 +384,3 @@
 </body>
 
 </html>
-
